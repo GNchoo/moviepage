@@ -12,12 +12,21 @@ const headerNav = [
     path: "/",
   },
   {
+    display: "검색 & 추천",
+    path: "/ChuChon",
+  },
+  {
     display: "영화",
     path: "/movie",
   },
   {
     display: "TV 시리즈",
     path: "/tv",
+  },
+
+  {
+    display: "로그인",
+    path: "/Login",
   },
 ];
 

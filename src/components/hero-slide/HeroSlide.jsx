@@ -1,3 +1,4 @@
+// 홈화면 맨위 큰 포스터 수정 페이지
 import React, { useState, useEffect, useRef } from "react";
 
 import SwiperCore, { Autoplay } from "swiper";
@@ -19,10 +20,10 @@ const HeroSlide = () => {
 
   useEffect(() => {
     const getMovies = async () => {
-      const params = { page: 1 };
+      const params = { page: 1 }; //db에서 첫페이지 영화 출력
       try {
         const response = await tmdbApi.getMoviesList(movieType.popular, { params });
-        setMovieItems(response.results.slice(1, 4));
+        setMovieItems(response.results.slice(1, 5)); // 슬라이드 몇개까지 나타낼지 입력
         console.log(response);
       } catch {
         console.log("error");
@@ -80,7 +81,7 @@ const HeroSlideItem = (props) => {
           <h2 className="title">{item.title}</h2>
           <div className="overview">{item.overview}</div>
           <div className="btns">
-            <Button onClick={() => hisrory.push("/movie/" + item.id)}>바로 보기</Button>
+            <Button onClick={() => hisrory.push("/movie/" + item.id)}>정보 보기</Button>
             <OutlineButton onClick={setModalActive}>트레일러 보기</OutlineButton>
           </div>
         </div>

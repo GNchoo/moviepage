@@ -33,7 +33,7 @@ const Footer = () => {
           <div className="footer__content__menu">
             <Link to="/">자주 본 것</Link>
             <Link to="/">최근에 본 것</Link>
-            <Link to="/">최고 IMDB</Link>
+            <Link to="/ChooChon">추천 알고리즘</Link>
           </div>
         </div>
       </div>

@@ -1,49 +1,52 @@
 import axiosClient from "./axiosClient";
 
 export const category = {
+  //사용할 api 카테고리
   movie: "movie",
   tv: "tv",
 };
 
 export const movieType = {
-  upcoming: "upcoming",
-  popular: "popular",
-  top_rated: "top_rated",
+  upcoming: "upcoming", // 출시 예정
+  popular: "popular", // 인기
+  top_rated: "top_rated", //최고 평점
+  now_playing: "now_playing", //현재 방영중
 };
 
 export const tvType = {
-  popular: "popular",
-  top_rated: "top_rated",
-  on_the_air: "on_the_air",
+  popular: "popular", // 출시 예정
+  top_rated: "top_rated", // 인기
+  on_the_air: "on_the_air", //방영중
 };
 
 const tmdbApi = {
   getMoviesList: (type, params) => {
-    const url = "movie/" + movieType[type];
+    //url /movie/여기에 올 카테고리
+    const url = "movie/" + movieType[type] + "?language=ko-KR&region=KR"; //한국 지역+언어 한국으로 변환
     return axiosClient.get(url, params);
   },
   getTvList: (type, params) => {
-    const url = "tv/" + tvType[type];
+    const url = "tv/" + tvType[type] + "?language=ko-KR&region=KR";
     return axiosClient.get(url, params);
   },
   getVideos: (cate, id) => {
-    const url = category[cate] + "/" + id + "/videos";
+    const url = category[cate] + "/" + id + "/videos?language=ko-KR&region=KR";
     return axiosClient.get(url, { params: {} });
   },
   search: (cate, params) => {
-    const url = "search/" + category[cate];
+    const url = "search/" + category[cate] + "?language=ko-KR&region=KR";
     return axiosClient.get(url, params);
   },
   detail: (cate, id, params) => {
-    const url = category[cate] + "/" + id;
+    const url = category[cate] + "/" + id + "?language=ko-KR&region=KR";
     return axiosClient.get(url, params);
   },
   credits: (cate, id) => {
-    const url = category[cate] + "/" + id + "/credits";
+    const url = category[cate] + "/" + id + "/credits?language=ko-KR&region=KR";
     return axiosClient.get(url, { params: {} });
   },
   similar: (cate, id) => {
-    const url = category[cate] + "/" + id + "/similar";
+    const url = category[cate] + "/" + id + "/similar?language=ko-KR&region=KR";
     return axiosClient.get(url, { params: {} });
   },
 };

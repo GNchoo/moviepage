@@ -14,7 +14,7 @@ const Home = () => {
       <div className="container">
         <div className="section mb-3">
           <div className="section__header mb-2">
-            <h2>최신 영화</h2>
+            <h2>최신 인기 영화</h2>
             <Link to="/movie">
               <OutlineButton className="small">더보기</OutlineButton>
             </Link>
@@ -34,7 +34,17 @@ const Home = () => {
 
         <div className="section mb-3">
           <div className="section__header mb-2">
-            <h2>최신 방영 TV</h2>
+            <h2>출시 예정 영화</h2>
+            <Link to="/movie">
+              <OutlineButton className="small">더보기</OutlineButton>
+            </Link>
+          </div>
+          <MovieList category={category.movie} type={movieType.now_playing} />
+        </div>
+
+        <div className="section mb-3">
+          <div className="section__header mb-2">
+            <h2>최신 인기 방영 TV</h2>
             <Link to="/tv">
               <OutlineButton className="small">더보기</OutlineButton>
             </Link>

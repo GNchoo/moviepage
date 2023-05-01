@@ -49,7 +49,7 @@ const Detail = () => {
               <p className="overview">{item.overview}</p>
               <div className="cast">
                 <div className="section__header">
-                  <h2>Casts</h2>
+                  <h2>출연진</h2>
                 </div>
                 <CastList id={item.id} />
               </div>
@@ -61,7 +61,7 @@ const Detail = () => {
             </div>
             <div className="section mb-3">
               <div className="section__header mb-2">
-                <h2>Similar</h2>
+                <h2>비슷한 영화 추천</h2>
               </div>
               <MovieList category={category} type="similar" id={item.id} />
             </div>
