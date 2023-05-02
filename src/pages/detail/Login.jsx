@@ -24,8 +24,8 @@ const Login = (props) => {
         <Button className="small" onClick={TryLogin}>
           로그인
         </Button>
-        <div className="sign-up">
-          <Link to="/">
+        <div className="SignForm">
+          <Link to="/SignForm">
             <h5>회원 가입</h5>
           </Link>
         </div>

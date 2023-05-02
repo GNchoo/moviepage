@@ -23,7 +23,10 @@ const headerNav = [
     display: "TV 시리즈",
     path: "/tv",
   },
-
+  {
+    display: "게시판",
+    path: "/Board",
+  },
   {
     display: "로그인",
     path: "/Login",

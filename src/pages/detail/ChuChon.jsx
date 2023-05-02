@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useCallback } from "react";
-import { useHistory } from "react-router";
+import { useNavigate } from "react-router";
 
 import Button from "../../components/button/Button";
 import Input from "../../components/input/Input";
@@ -8,15 +8,15 @@ import "./ChuChon.scss";
 import bg from "../../assets/body-bg.jpg";
 import bg2 from "../../assets/login-bg.jpg";
 const ChuChon = (props) => {
-  const history = useHistory();
+  const navigate = useNavigate();
 
   const [keyword, setKeyword] = useState(props.keyword ? props.keyword : "");
 
   const goToSearch = useCallback(() => {
     if (keyword.trim().length > 0) {
-      history.push(`/movie/search/${keyword}`);
+      navigate(`/movie/search/${keyword}`);
     }
-  }, [keyword, history]);
+  }, [keyword, navigate]);
 
   useEffect(() => {
     const enterEvent = (e) => {
@@ -33,9 +33,9 @@ const ChuChon = (props) => {
 
   const goToSearch2 = useCallback(() => {
     if (keyword.trim().length > 0) {
-      history.push(`/tv/search/${keyword}`);
+      navigate(`/tv/search/${keyword}`);
     }
-  }, [keyword, history]);
+  }, [keyword, navigate]);
 
   useEffect(() => {
     const enterEvent = (e) => {

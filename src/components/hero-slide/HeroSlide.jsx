@@ -11,7 +11,7 @@ import tmdbApi, { category, movieType } from "../../api/tmdbApi";
 import apiConfig from "../../api/apiConfig";
 
 import "./hero-slide.scss";
-import { useHistory } from "react-router";
+import { useNavigate } from "react-router-dom";
 
 const HeroSlide = () => {
   SwiperCore.use([Autoplay]);
@@ -53,7 +53,7 @@ const HeroSlide = () => {
 };
 
 const HeroSlideItem = (props) => {
-  let hisrory = useHistory();
+  const navigate = useNavigate();
 
   const item = props.item;
 
@@ -81,7 +81,7 @@ const HeroSlideItem = (props) => {
           <h2 className="title">{item.title}</h2>
           <div className="overview">{item.overview}</div>
           <div className="btns">
-            <Button onClick={() => hisrory.push("/movie/" + item.id)}>정보 보기</Button>
+            <Button onClick={() => navigate.push("/movie/" + item.id)}>정보 보기</Button>
             <OutlineButton onClick={setModalActive}>트레일러 보기</OutlineButton>
           </div>
         </div>
